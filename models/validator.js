@@ -4,7 +4,7 @@ const validateNewRide = (body) => {
   const schema = Joi.object({
     duration: Joi.number().required(),
     distance: Joi.number().required(),
-    startTime: Joi.string().min(6).required(),
+    startTime: Joi.required(),
   });
   const validate = schema.validate(body);
   return validate;
