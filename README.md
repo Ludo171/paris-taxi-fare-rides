@@ -1,6 +1,6 @@
-# Paris Taxi Fare - Rides API
+# Paris Taxi Fare - Pricing Microservice
 
-This node server gives access to a mongoDB cluster storing collections of taxi rides.
+This node server provides an independent pricing services
 
 CICD deploys new releases on a free Heroku instance.
 
