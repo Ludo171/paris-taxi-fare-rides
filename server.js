@@ -5,11 +5,13 @@ const ridesRoute = require('./routes/ride');
 
 const setExpressApp = () => {
   const app = express();
+
   // Cors
-  const corsOptions = {
-    origin: 'http://localhost:3000',
-  };
+  // Set up a whitelist and check against it:
+  const corsOptions = { origin: "http;//localhost:3000" };
+  // Then pass them to cors:
   app.use(cors(corsOptions));
+
 
   // parse requests of content-type - application/json
   app.use(bodyParser.json());

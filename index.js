@@ -5,7 +5,7 @@ const { startDbClient, stopDbClient } = require('./models/database-client');
 startDbClient();
 startServer();
 
-setTimeout(() => {
-  stopServer();
-  stopDbClient();
-}, 60 * 5 * 1000);
+// setTimeout(() => {
+//   stopServer();
+//   stopDbClient();
+// }, 60 * 5 * 1000);

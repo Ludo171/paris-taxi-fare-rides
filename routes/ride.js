@@ -4,12 +4,10 @@ const Ride = require('../models/Ride');
 const { validateNewRide } = require('../models/validator');
 
 // GET all rides
-// |--> Get all rides
 router.get('/', async (req, res) => {
   try {
     const filter = {};
     const rides = await Ride.find(filter);
-    console.log(rides);
     if (rides.length === 0 || undefined) return res.status(404).send(rides);
     return res.status(200).send(rides);
   } catch (err) {
@@ -18,12 +16,10 @@ router.get('/', async (req, res) => {
 });
 
 // GET Ride by Id
-// |--> Get one ride
 router.get('/:id', async (req, res) => {
   try {
     const filter = { _id: req.params.id };
     const rides = await Ride.find(filter);
-    console.log(rides);
     if (rides.length === 0 || undefined) return res.status(404).send(rides);
     return res.send(rides);
   } catch (err) {
@@ -31,8 +27,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST Ride
-// |--> Create one ride
+// POST Create one ride
 router.post('/', async (req, res) => {
   try {
     // Validate Body for a new Ride
@@ -50,11 +45,9 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(500).send(`Server Error on GET /rides/${req.params.id}`);
   }
-  console.log('should create one ride');
 });
 
 // DELETE Ride by id
-// |--> Delete ride by id
 router.delete('/:id', async (req, res) => {
   try {
     // Find ride to delete
